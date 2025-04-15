@@ -21,8 +21,8 @@
     }
 
     nav {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 1rem;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1rem 0;
       text-align: center;
       position: sticky;
       top: 0;
@@ -31,16 +31,23 @@
 
     nav a {
       color: white;
-      margin: 0 15px;
+      margin: 0 20px;
       text-decoration: none;
       font-weight: bold;
-      cursor: pointer;
+      font-size: 1rem;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
     }
 
     section {
       display: none;
       padding: 2rem;
-      background: rgba(0, 0, 0, 0.5);
+      background: black;
       margin: 2rem auto;
       max-width: 900px;
       border-radius: 12px;
@@ -100,6 +107,8 @@
     <a onclick="showPage('pdf')">PDF</a>
     <a onclick="showPage('books')">Books</a>
     <a onclick="showPage('classes')">Classes</a>
+    <a onclick="showPage('test')">Test Series</a>
+    <a onclick="showPage('notes')">Notes</a>
     <a onclick="showPage('quiz')">Quiz</a>
     <a onclick="showPage('mcqs')">MCQs</a>
   </nav>
@@ -126,6 +135,18 @@
   <section id="classes">
     <h2>Classes Section</h2>
     <p>Watch lessons and video classes here. (Coming soon!)</p>
+  </section>
+
+  <!-- TEST SERIES -->
+  <section id="test">
+    <h2>Test Series</h2>
+    <p>Practice tests and series coming soon!</p>
+  </section>
+
+  <!-- NOTES -->
+  <section id="notes">
+    <h2>Notes Section</h2>
+    <p>Important notes and summaries will be available here!</p>
   </section>
 
   <!-- QUIZ -->
@@ -173,7 +194,6 @@
   </footer>
 
   <script>
-    // Page Navigation
     function showPage(pageId) {
       document.querySelectorAll("section").forEach(section => {
         section.classList.remove("active");
@@ -181,7 +201,6 @@
       document.getElementById(pageId).classList.add("active");
     }
 
-    // Quiz Checking
     function checkAnswers() {
       const q1 = document.querySelector('input[name="q1"]:checked');
       const q2 = document.querySelector('input[name="q2"]:checked');
