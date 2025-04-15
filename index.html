@@ -9,7 +9,7 @@
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       color: white;
-      background: linear-gradient(135deg, red, orange, yellow, green, blue, indigo, violet);
+      background: linear-gradient(135deg, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #4b0082, #8a2be2);
       background-size: 400% 400%;
       animation: rainbow 20s ease infinite;
     }
@@ -76,6 +76,12 @@
       color: white;
       font-size: 0.9rem;
     }
+
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+      color: yellow;
+    }
   </style>
 </head>
 <body>
@@ -91,7 +97,7 @@
 
   <section id="home">
     <h1>Welcome to Veer Vigyan</h1>
-    <p>Veer Vigyan means "All Science". This website is created by Veer Yaduveer, a passionate learner who dreams of helping every student. Here you'll find useful books, PDFs, quizzes, and free learning material. Let’s make learning joyful together!</p>
+    <p>This website is created by Veer Yaduveer, a passionate learner who dreams of helping every student. Here you'll find useful books, PDFs, quizzes, and free learning material. Let’s make learning joyful together!</p>
   </section>
 
   <section id="pdf">
@@ -113,37 +119,79 @@
     <h2>Quiz Section</h2>
     <div class="question">
       <p>1. What is the boiling point of water?</p>
-      <label><input type="radio" name="q1"> 90°C</label>
-      <label><input type="radio" name="q1"> 100°C</label>
-      <label><input type="radio" name="q1"> 120°C</label>
+      <label><input type="radio" name="q1" value="wrong"> 90°C</label>
+      <label><input type="radio" name="q1" value="correct"> 100°C</label>
+      <label><input type="radio" name="q1" value="wrong"> 120°C</label>
+      <div class="result" id="result-q1"></div>
     </div>
     <div class="question">
       <p>2. Which planet is known as the Red Planet?</p>
-      <label><input type="radio" name="q2"> Earth</label>
-      <label><input type="radio" name="q2"> Mars</label>
-      <label><input type="radio" name="q2"> Venus</label>
+      <label><input type="radio" name="q2" value="wrong"> Earth</label>
+      <label><input type="radio" name="q2" value="correct"> Mars</label>
+      <label><input type="radio" name="q2" value="wrong"> Venus</label>
+      <div class="result" id="result-q2"></div>
     </div>
+    <button onclick="checkAnswers()">Submit Answers</button>
   </section>
 
   <section id="mcqs" class="quiz">
     <h2>MCQ Practice</h2>
     <div class="question">
       <p>1. What is the symbol of Sodium?</p>
-      <label><input type="radio" name="m1"> So</label>
-      <label><input type="radio" name="m1"> Na</label>
-      <label><input type="radio" name="m1"> S</label>
+      <label><input type="radio" name="m1" value="wrong"> So</label>
+      <label><input type="radio" name="m1" value="correct"> Na</label>
+      <label><input type="radio" name="m1" value="wrong"> S</label>
+      <div class="result" id="result-m1"></div>
     </div>
     <div class="question">
       <p>2. Which gas do plants absorb?</p>
-      <label><input type="radio" name="m2"> Oxygen</label>
-      <label><input type="radio" name="m2"> Carbon Dioxide</label>
-      <label><input type="radio" name="m2"> Hydrogen</label>
+      <label><input type="radio" name="m2" value="wrong"> Oxygen</label>
+      <label><input type="radio" name="m2" value="correct"> Carbon Dioxide</label>
+      <label><input type="radio" name="m2" value="wrong"> Hydrogen</label>
+      <div class="result" id="result-m2"></div>
     </div>
+    <button onclick="checkMCQs()">Submit Answers</button>
   </section>
 
   <footer>
     Made with love by Veer Yaduveer for all students.
   </footer>
 
+  <script>
+    function checkAnswers() {
+      const q1Answer = document.querySelector('input[name="q1"]:checked');
+      const q2Answer = document.querySelector('input[name="q2"]:checked');
+
+      if (q1Answer) {
+        document.getElementById('result-q1').textContent = (q1Answer.value === "correct") ? "Correct!" : "Wrong! The correct answer is 100°C.";
+      } else {
+        document.getElementById('result-q1').textContent = "Please select an answer!";
+      }
+
+      if (q2Answer) {
+        document.getElementById('result-q2').textContent = (q2Answer.value === "correct") ? "Correct!" : "Wrong! The correct answer is Mars.";
+      } else {
+        document.getElementById('result-q2').textContent = "Please select an answer!";
+      }
+    }
+
+    function checkMCQs() {
+      const m1Answer = document.querySelector('input[name="m1"]:checked');
+      const m2Answer = document.querySelector('input[name="m2"]:checked');
+
+      if (m1Answer) {
+        document.getElementById('result-m1').textContent = (m1Answer.value === "correct") ? "Correct!" : "Wrong! The correct answer is Na.";
+      } else {
+        document.getElementById('result-m1').textContent = "Please select an answer!";
+      }
+
+      if (m2Answer) {
+        document.getElementById('result-m2').textContent = (m2Answer.value === "correct") ? "Correct!" : "Wrong! The correct answer is Carbon Dioxide.";
+      } else {
+        document.getElementById('result-m2').textContent = "Please select an answer!";
+      }
+    }
+  </script>
+
 </body>
-      </html>
+</html>
