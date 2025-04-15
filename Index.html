@@ -1,16 +1,73 @@
-document.getElementById("quizForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form submission
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veer Vigyan - All Science">
+    <title>Veer Vigyan - All Science</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Veer Vigyan</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#pdfs">PDFs</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#quizzes">Quizzes</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    let score = 0;
+    <section id="home">
+        <h2>Welcome to Veer Vigyan</h2>
+        <p>This website is dedicated to science, designed to help students understand complex concepts and provide resources for learning. Here you will find PDFs, books, quizzes, and more to help you on your journey in science.</p>
+    </section>
 
-    // Quiz 1: Basic Science
-    let q1 = document.querySelector('input[name="q1"]:checked');
-    if (q1 && q1.value === "100") score++;
+    <section id="pdfs">
+        <h2>PDFs</h2>
+        <p>Click on the links below to access the PDFs:</p>
+        <ul>
+            <li><a href="path_to_pdf1.pdf" target="_blank">PDF 1</a></li>
+            <li><a href="path_to_pdf2.pdf" target="_blank">PDF 2</a></li>
+        </ul>
+    </section>
 
-    // Quiz 2: Physics
-    let q2 = document.querySelector('input[name="q2"]:checked');
-    if (q2 && q2.value === "Newton") score++;
+    <section id="books">
+        <h2>Books</h2>
+        <p>Explore various books that cover key topics in science:</p>
+        <ul>
+            <li><a href="path_to_book1.pdf" target="_blank">Book 1</a></li>
+            <li><a href="path_to_book2.pdf" target="_blank">Book 2</a></li>
+        </ul>
+    </section>
 
-    // Show result
-    alert("Your score: " + score + "/2");
-});
+    <section id="quizzes">
+        <h2>Quizzes</h2>
+        <form id="quizForm">
+            <fieldset>
+                <legend>Quiz 1: Basic Science</legend>
+                <label for="q1">1. What is the boiling point of water?</label><br>
+                <input type="radio" id="q1a" name="q1" value="100"> 100°C<br>
+                <input type="radio" id="q1b" name="q1" value="90"> 90°C<br>
+                <input type="radio" id="q1c" name="q1" value="110"> 110°C<br>
+            </fieldset>
+            <fieldset>
+                <legend>Quiz 2: Physics</legend>
+                <label for="q2">2. What is the unit of force?</label><br>
+                <input type="radio" id="q2a" name="q2" value="Newton"> Newton<br>
+                <input type="radio" id="q2b" name="q2" value="Joule"> Joule<br>
+                <input type="radio" id="q2c" name="q2" value="Meter"> Meter<br>
+            </fieldset>
+            <button type="submit">Submit Answers</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Veer Vigyan | All rights reserved</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
