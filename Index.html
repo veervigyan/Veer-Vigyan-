@@ -1,1 +1,16 @@
+document.getElementById("quizForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form submission
 
+    let score = 0;
+
+    // Quiz 1: Basic Science
+    let q1 = document.querySelector('input[name="q1"]:checked');
+    if (q1 && q1.value === "100") score++;
+
+    // Quiz 2: Physics
+    let q2 = document.querySelector('input[name="q2"]:checked');
+    if (q2 && q2.value === "Newton") score++;
+
+    // Show result
+    alert("Your score: " + score + "/2");
+});
