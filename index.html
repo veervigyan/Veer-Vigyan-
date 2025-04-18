@@ -1,172 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Veer Vigyan</title>
   <style>
-    /* Rainbow background animation */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, red, orange, yellow, green, blue, indigo, violet);
-      background-size: 400% 400%;
-      animation: rainbowBG 10s ease infinite;
       color: white;
+      background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
+      background-size: 2000% 2000%;
+      animation: rainbow 40s linear infinite;
     }
 
-    @keyframes rainbowBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-
-    header {
-      background-color: black;
-      padding: 30px;
-      text-align: center;
-      font-size: 2.5em;
-      font-weight: bold;
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     nav {
-      background-color: black;
-      display: flex;
+      background: rgba(0, 0, 0, 0.85);
       overflow-x: auto;
       white-space: nowrap;
-      padding: 15px;
-      gap: 25px;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav::-webkit-scrollbar {
+      display: none;
     }
 
     nav a {
+      display: inline-block;
       color: white;
       text-decoration: none;
-      padding: 16px 28px;
-      background-color: #333;
-      border-radius: 12px;
-      font-size: 1.3em;
-      flex: 0 0 auto;
-      transition: background-color 0.3s;
+      font-weight: bold;
+      margin: 0 15px;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: background 0.3s;
+      font-size: 1rem;
     }
 
     nav a:hover {
-      background-color: #555;
+      background: rgba(255, 255, 255, 0.2);
     }
 
     section {
       display: none;
-      background-color: black;
-      padding: 30px;
-      margin: 20px;
-      border-radius: 15px;
+      padding: 2rem;
+      background: black;
+      margin: 2rem auto;
+      max-width: 900px;
+      border-radius: 12px;
     }
 
     section.active {
       display: block;
     }
 
-    h2 {
-      color: white;
+    h1, h2 {
+      text-align: center;
     }
 
-    .quiz {
-      margin-bottom: 20px;
+    .quiz, .question {
+      margin-top: 20px;
+    }
+
+    .question p {
+      font-weight: bold;
+    }
+
+    label {
+      display: block;
+      margin-left: 20px;
     }
 
     .result {
       margin-top: 10px;
       font-weight: bold;
+      color: yellow;
     }
 
-    .correct {
-      color: lightgreen;
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.7);
+      margin-top: 3rem;
+      font-size: 0.9rem;
     }
 
-    .wrong {
-      color: red;
-    }
-
-    @media screen and (max-width: 600px) {
-      nav {
-        flex-direction: row;
-        overflow-x: scroll;
-      }
-
-      nav a {
-        font-size: 1.1em;
-        padding: 14px 18px;
-      }
+    button {
+      margin-top: 10px;
+      padding: 5px 15px;
+      border: none;
+      background: #fff;
+      color: black;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-<header>Veer Vigyan</header>
+  <nav>
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('pdf')">PDF</a>
+    <a onclick="showPage('books')">Books</a>
+    <a onclick="showPage('classes')">Classes</a>
+    <a onclick="showPage('test')">Test Series</a>
+    <a onclick="showPage('notes')">Notes</a>
+    <a onclick="showPage('quiz')">Quiz</a>
+    <a onclick="showPage('mcqs')">MCQs</a>
+  </nav>
 
-<nav>
-  <a href="#home" onclick="showSection('home')">Home</a>
-  <a href="#pdf" onclick="showSection('pdf')">PDF</a>
-  <a href="#books" onclick="showSection('books')">Books</a>
-  <a href="#classes" onclick="showSection('classes')">Classes</a>
-  <a href="#quiz" onclick="showSection('quiz')">Quiz</a>
-  <a href="#mcq" onclick="showSection('mcq')">MCQ</a>
-  <a href="#notes" onclick="showSection('notes')">Notes</a>
-  <a href="#test" onclick="showSection('test')">Test Series</a>
-</nav>
+  <!-- HOME -->
+  <section id="home" class="active">
+    <h1>Welcome to Veer Vigyan</h1>
+    <p>This website is created by <strong>Veer Yaduveer</strong>, a passionate learner who dreams of helping every student. Here you'll find useful books, PDFs, quizzes, and free learning material. Let’s make learning joyful together!</p>
+  </section>
 
-<section id="home" class="active">
-  <h2>Welcome to Veer Vigyan</h2>
-  <p>
-    Veer Vigyan is a student-friendly platform developed by Veer Yaduveer to make science learning engaging, exciting, and effective. Here you'll find downloadable PDFs, interactive quizzes, MCQs, organized classes, and much more. Whether you're preparing for exams or exploring knowledge, Veer Vigyan is your best companion!
-  </p>
-</section>
+  <!-- PDF -->
+  <section id="pdf">
+    <h2>PDF Section</h2>
+    <p>Helpful study PDFs will be available here soon!</p>
+  </section>
 
-<section id="pdf"><h2>PDF Section</h2><p>Downloadable study PDFs will be added here soon.</p></section>
-<section id="books"><h2>Books Section</h2><p>Science books and references will appear here. Stay tuned!</p></section>
-<section id="classes"><h2>Classes Section</h2><p>Live and recorded classes will be available here.</p></section>
+  <!-- BOOKS -->
+  <section id="books">
+    <h2>Books Section</h2>
+    <p>Collection of important books for students. (Coming soon!)</p>
+  </section>
 
-<section id="quiz">
-  <h2>Quiz Section</h2>
-  <div class="quiz">
-    <p>Q1: What is the boiling point of water at sea level?</p>
-    <label><input type="radio" name="q1" value="100°C" onclick="checkAnswer(this, 'q1', '100°C')"> 100°C</label><br>
-    <label><input type="radio" name="q1" value="50°C" onclick="checkAnswer(this, 'q1', '100°C')"> 50°C</label><br>
-    <label><input type="radio" name="q1" value="0°C" onclick="checkAnswer(this, 'q1', '100°C')"> 0°C</label><br>
-    <div id="result-q1" class="result"></div>
-  </div>
-</section>
+  <!-- CLASSES -->
+  <section id="classes">
+    <h2>Classes Section</h2>
+    <p>Watch lessons and video classes here. (Coming soon!)</p>
+  </section>
 
-<section id="mcq">
-  <h2>MCQ Section</h2>
-  <div class="quiz">
-    <p>Q1: Which planet is called the Red Planet?</p>
-    <label><input type="radio" name="m1" value="Mars" onclick="checkAnswer(this, 'm1', 'Mars')"> Mars</label><br>
-    <label><input type="radio" name="m1" value="Venus" onclick="checkAnswer(this, 'm1', 'Mars')"> Venus</label><br>
-    <label><input type="radio" name="m1" value="Jupiter" onclick="checkAnswer(this, 'm1', 'Mars')"> Jupiter</label><br>
-    <div id="result-m1" class="result"></div>
-  </div>
-</section>
+  <!-- TEST SERIES -->
+  <section id="test">
+    <h2>Test Series</h2>
+    <p>Practice tests and series coming soon!</p>
+  </section>
 
-<section id="notes"><h2>Notes</h2><p>Topic-wise notes will be uploaded here soon.</p></section>
-<section id="test"><h2>Test Series</h2><p>Take mock tests to check your preparation. Coming soon!</p></section>
+  <!-- NOTES -->
+  <section id="notes">
+    <h2>Notes Section</h2>
+    <p>Important notes and summaries will be available here!</p>
+  </section>
 
-<script>
-  function showSection(id) {
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => section.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-  }
+  <!-- QUIZ -->
+  <section id="quiz" class="quiz">
+    <h2>Quiz Section</h2>
+    <div class="question">
+      <p>1. What is the boiling point of water?</p>
+      <label><input type="radio" name="q1" value="wrong"> 90°C</label>
+      <label><input type="radio" name="q1" value="correct"> 100°C</label>
+      <label><input type="radio" name="q1" value="wrong"> 120°C</label>
+      <div class="result" id="result-q1"></div>
+    </div>
+    <div class="question">
+      <p>2. Which planet is known as the Red Planet?</p>
+      <label><input type="radio" name="q2" value="wrong"> Earth</label>
+      <label><input type="radio" name="q2" value="correct"> Mars</label>
+      <label><input type="radio" name="q2" value="wrong"> Venus</label>
+      <div class="result" id="result-q2"></div>
+    </div>
+    <button onclick="checkAnswers()">Submit Answers</button>
+  </section>
 
-  function checkAnswer(input, group, correct) {
-    const resultDiv = document.getElementById("result-" + group);
-    if (input.value === correct) {
-      resultDiv.innerHTML = "Correct!";
-      resultDiv.className = "result correct";
-    } else {
-      resultDiv.innerHTML = "Wrong!";
-      resultDiv.className = "result wrong";
+  <!-- MCQs -->
+  <section id="mcqs" class="quiz">
+    <h2>MCQ Practice</h2>
+    <div class="question">
+      <p>1. What is the symbol of Sodium?</p>
+      <label><input type="radio" name="m1" value="wrong"> So</label>
+      <label><input type="radio" name="m1" value="correct"> Na</label>
+      <label><input type="radio" name="m1" value="wrong"> S</label>
+      <div class="result" id="result-m1"></div>
+    </div>
+    <div class="question">
+      <p>2. Which gas do plants absorb?</p>
+      <label><input type="radio" name="m2" value="wrong"> Oxygen</label>
+      <label><input type="radio" name="m2" value="correct"> Carbon Dioxide</label>
+      <label><input type="radio" name="m2" value="wrong"> Hydrogen</label>
+      <div class="result" id="result-m2"></div>
+    </div>
+    <button onclick="checkMCQs()">Submit Answers</button>
+  </section>
+
+  <footer>
+    Made with love by Veer Yaduveer for all students.
+  </footer>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll("section").forEach(section => {
+        section.classList.remove("active");
+      });
+      document.getElementById(pageId).classList.add("active");
     }
-  }
-</script>
 
+    function checkAnswers() {
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      document.getElementById('result-q1').textContent = q1 ? (q1.value === "correct" ? "Correct!" : "Wrong!") : "Please select an answer.";
+      document.getElementById('result-q2').textContent = q2 ? (q2.value === "correct" ? "Correct!" : "Wrong!") : "Please select an answer.";
+    }
+
+    function checkMCQs() {
+      const m1 = document.querySelector('input[name="m1"]:checked');
+      const m2 = document.querySelector('input[name="m2"]:checked');
+      document.getElementById('result-m1').textContent = m1 ? (m1.value === "correct" ? "Correct!" : "Wrong!") : "Please select an answer.";
+      document.getElementById('result-m2').textContent = m2 ? (m2.value === "correct" ? "Correct!" : "Wrong!") : "Please select an answer.";
+    }
+  </script>
 </body>
 </html>
