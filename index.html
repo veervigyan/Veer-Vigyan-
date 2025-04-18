@@ -7,8 +7,16 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      background: linear-gradient(135deg, red, orange, yellow, green, blue, indigo, violet);
+      background-size: 400% 400%;
+      animation: rainbowBackground 10s ease infinite;
       color: white;
+    }
+
+    @keyframes rainbowBackground {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
     header {
@@ -43,10 +51,15 @@
     }
 
     section {
+      display: none;
       background-color: black;
       padding: 30px;
       margin: 20px;
       border-radius: 15px;
+    }
+
+    section.active {
+      display: block;
     }
 
     h2 {
@@ -86,23 +99,22 @@
 <header>Veer Vigyan</header>
 
 <nav>
-  <a href="#home">Home</a>
-  <a href="#pdf">PDF</a>
-  <a href="#books">Books</a>
-  <a href="#classes">Classes</a>
-  <a href="#quiz">Quiz</a>
-  <a href="#mcq">MCQ</a>
-  <a href="#notes">Notes</a>
-  <a href="#test">Test Series</a>
+  <a href="#home" onclick="showSection('home')">Home</a>
+  <a href="#pdf" onclick="showSection('pdf')">PDF</a>
+  <a href="#books" onclick="showSection('books')">Books</a>
+  <a href="#classes" onclick="showSection('classes')">Classes</a>
+  <a href="#quiz" onclick="showSection('quiz')">Quiz</a>
+  <a href="#mcq" onclick="showSection('mcq')">MCQ</a>
+  <a href="#notes" onclick="showSection('notes')">Notes</a>
+  <a href="#test" onclick="showSection('test')">Test Series</a>
 </nav>
 
-<section id="home">
+<section id="home" class="active">
   <h2>Welcome to Veer Vigyan</h2>
   <p>
-    Veer Vigyan is a powerful initiative by Veer Yaduveer, dedicated to helping students achieve their dreams. 
-    This platform provides everything from PDFs, books, online classes, quizzes, and MCQs to notes and test series — 
-    all in one place. We believe in making education accessible, simple, and effective for every learner.
-    Explore your knowledge and boost your confidence with our interactive tools and well-structured resources.
+    Veer Vigyan is an educational platform founded by Veer Yaduveer, dedicated to empowering students across the country.
+    This website offers PDFs, books, online classes, quizzes, MCQs, notes, and test series — all free and easy to access.
+    Learn smarter and faster with interactive tools made specially for you.
   </p>
 </section>
 
@@ -130,13 +142,6 @@
     <label><input type="radio" name="q1" value="50°C" onclick="checkAnswer(this, 'q1', '100°C')"> 50°C</label><br>
     <div id="result-q1" class="result"></div>
   </div>
-  <div class="quiz">
-    <p>Q2: Who is known as the father of modern science?</p>
-    <label><input type="radio" name="q2" value="Isaac Newton" onclick="checkAnswer(this, 'q2', 'Galileo Galilei')"> Isaac Newton</label><br>
-    <label><input type="radio" name="q2" value="Albert Einstein" onclick="checkAnswer(this, 'q2', 'Galileo Galilei')"> Albert Einstein</label><br>
-    <label><input type="radio" name="q2" value="Galileo Galilei" onclick="checkAnswer(this, 'q2', 'Galileo Galilei')"> Galileo Galilei</label><br>
-    <div id="result-q2" class="result"></div>
-  </div>
 </section>
 
 <section id="mcq">
@@ -161,10 +166,15 @@
 </section>
 
 <script>
+  function showSection(id) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => section.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+
   function checkAnswer(input, group, correct) {
-    const selected = input.value;
     const resultDiv = document.getElementById("result-" + group);
-    if (selected === correct) {
+    if (input.value === correct) {
       resultDiv.innerHTML = "Correct!";
       resultDiv.className = "result correct";
     } else {
