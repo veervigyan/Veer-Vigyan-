@@ -9,35 +9,41 @@
       margin: 0;
       font-family: Arial, sans-serif;
       color: white;
-      background: linear-gradient(135deg, red, orange, yellow, green, blue, indigo, violet);
-      background-size: 500% 500%;
-      animation: rainbow 30s linear infinite;
+      background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
+      background-size: 2000% 2000%;
+      animation: rainbow 40s linear infinite;
     }
 
     @keyframes rainbow {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     nav {
-      background: rgba(0, 0, 0, 0.8);
-      padding: 1rem 0;
-      text-align: center;
+      background: rgba(0, 0, 0, 0.85);
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 10px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
+    nav::-webkit-scrollbar {
+      display: none;
+    }
+
     nav a {
+      display: inline-block;
       color: white;
-      margin: 0 20px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1rem;
-      padding: 8px 12px;
+      margin: 0 15px;
+      padding: 10px 15px;
       border-radius: 8px;
       transition: background 0.3s;
+      font-size: 1rem;
     }
 
     nav a:hover {
@@ -216,4 +222,4 @@
     }
   </script>
 </body>
-</html>
+  </html>
