@@ -7,56 +7,45 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, red, orange, yellow, green, blue, indigo, violet);
+      background-size: 400% 400%;
+      animation: rainbow 10s ease infinite;
       color: white;
-      background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
-      background-size: 2000% 2000%;
-      animation: rainbow 40s linear infinite;
     }
 
     @keyframes rainbow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
     nav {
-      background: rgba(0, 0, 0, 0.85);
+      display: flex;
       overflow-x: auto;
       white-space: nowrap;
+      background-color: rgba(0, 0, 0, 0.8);
       padding: 10px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav::-webkit-scrollbar {
-      display: none;
     }
 
     nav a {
-      display: inline-block;
       color: white;
       text-decoration: none;
-      font-weight: bold;
-      margin: 0 15px;
-      padding: 10px 15px;
-      border-radius: 8px;
+      padding: 10px 20px;
+      margin: 0 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
       transition: background 0.3s;
-      font-size: 1rem;
     }
 
     nav a:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.3);
     }
 
     section {
       display: none;
-      padding: 2rem;
-      background: black;
-      margin: 2rem auto;
-      max-width: 900px;
-      border-radius: 12px;
+      padding: 20px;
+      background-color: black;
     }
 
     section.active {
@@ -64,162 +53,109 @@
     }
 
     h1, h2 {
-      text-align: center;
+      color: #ffcc00;
     }
 
-    .quiz, .question {
+    .quiz, .mcq {
       margin-top: 20px;
-    }
-
-    .question p {
-      font-weight: bold;
-    }
-
-    label {
-      display: block;
-      margin-left: 20px;
-    }
-
-    .result {
-      margin-top: 10px;
-      font-weight: bold;
-      color: yellow;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.7);
-      margin-top: 3rem;
-      font-size: 0.9rem;
-    }
-
-    button {
-      margin-top: 10px;
-      padding: 5px 15px;
-      border: none;
-      background: #fff;
-      color: black;
-      font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a onclick="showPage('home')">Home</a>
-    <a onclick="showPage('pdf')">PDF</a>
-    <a onclick="showPage('books')">Books</a>
-    <a onclick="showPage('classes')">Classes</a>
-    <a onclick="showPage('test')">Test Series</a>
-    <a onclick="showPage('notes')">Notes</a>
-    <a onclick="showPage('quiz')">Quiz</a>
-    <a onclick="showPage('mcqs')">MCQs</a>
+    <a href="#home" onclick="showSection('home')">Home</a>
+    <a href="#pdf" onclick="showSection('pdf')">PDF</a>
+    <a href="#books" onclick="showSection('books')">Books</a>
+    <a href="#classes" onclick="showSection('classes')">Classes</a>
+    <a href="#notes" onclick="showSection('notes')">Notes</a>
+    <a href="#testseries" onclick="showSection('testseries')">Test Series</a>
+    <a href="#quiz" onclick="showSection('quiz')">Quiz</a>
+    <a href="#mcq" onclick="showSection('mcq')">MCQ</a>
   </nav>
 
-  <!-- HOME -->
   <section id="home" class="active">
     <h1>Welcome to Veer Vigyan</h1>
-    <p>This website is created by <strong>Veer Yaduveer</strong>, a passionate learner who dreams of helping every student. Here you'll find useful books, PDFs, quizzes, and free learning material. Let’s make learning joyful together!</p>
+    <p style="font-size: 1.2rem; line-height: 1.8;">
+      <strong>Veer Vigyan</strong> is a dream project created by <strong>Veer Yaduveer</strong>, dedicated to every student who dares to dream big. This platform is built with love, knowledge, and a deep desire to make science, study, and self-growth fun and accessible.
+    </p>
+    <p style="font-size: 1.1rem; line-height: 1.8;">
+      Here you will find a treasure of <strong>free resources</strong> including <em>PDFs, Books, Online Classes, Notes, Test Series, Quizzes, and MCQs</em> — all in one place! Whether you are preparing for school, boards, or competitive exams, Veer Vigyan is your online friend and guide.
+    </p>
+    <p style="font-size: 1.1rem; line-height: 1.8;">
+      Our mission is to support every student, regardless of background, and make learning not just a task, but a joyful journey. Because true learning starts when curiosity meets clarity — and that’s what <strong>Veer Vigyan</strong> brings to you!
+    </p>
+    <p style="margin-top: 20px; font-weight: bold; font-size: 1.2rem;">
+      Let’s learn, grow, and succeed together. Welcome to the family!
+    </p>
   </section>
 
-  <!-- PDF -->
   <section id="pdf">
     <h2>PDF Section</h2>
-    <p>Helpful study PDFs will be available here soon!</p>
+    <p>You can upload your study PDFs here.</p>
   </section>
 
-  <!-- BOOKS -->
   <section id="books">
     <h2>Books Section</h2>
-    <p>Collection of important books for students. (Coming soon!)</p>
+    <p>Here you can list important textbooks and reference books.</p>
   </section>
 
-  <!-- CLASSES -->
   <section id="classes">
-    <h2>Classes Section</h2>
-    <p>Watch lessons and video classes here. (Coming soon!)</p>
+    <h2>Classes</h2>
+    <p>Provide links or schedules for online or offline classes.</p>
   </section>
 
-  <!-- TEST SERIES -->
-  <section id="test">
-    <h2>Test Series</h2>
-    <p>Practice tests and series coming soon!</p>
-  </section>
-
-  <!-- NOTES -->
   <section id="notes">
-    <h2>Notes Section</h2>
-    <p>Important notes and summaries will be available here!</p>
+    <h2>Notes</h2>
+    <p>Upload handwritten or typed notes for subjects.</p>
   </section>
 
-  <!-- QUIZ -->
-  <section id="quiz" class="quiz">
+  <section id="testseries">
+    <h2>Test Series</h2>
+    <p>Students can take regular mock tests here.</p>
+  </section>
+
+  <section id="quiz">
     <h2>Quiz Section</h2>
-    <div class="question">
-      <p>1. What is the boiling point of water?</p>
-      <label><input type="radio" name="q1" value="wrong"> 90°C</label>
-      <label><input type="radio" name="q1" value="correct"> 100°C</label>
-      <label><input type="radio" name="q1" value="wrong"> 120°C</label>
-      <div class="result" id="result-q1"></div>
+    <div class="quiz">
+      <p>Q1: What is the boiling point of water?</p>
+      <input type="radio" name="q1"> 100°C<br>
+      <input type="radio" name="q1"> 0°C<br>
+      <input type="radio" name="q1"> 50°C<br>
     </div>
-    <div class="question">
-      <p>2. Which planet is known as the Red Planet?</p>
-      <label><input type="radio" name="q2" value="wrong"> Earth</label>
-      <label><input type="radio" name="q2" value="correct"> Mars</label>
-      <label><input type="radio" name="q2" value="wrong"> Venus</label>
-      <div class="result" id="result-q2"></div>
+    <div class="quiz">
+      <p>Q2: Who is known as the father of science?</p>
+      <input type="radio" name="q2"> Newton<br>
+      <input type="radio" name="q2"> Einstein<br>
+      <input type="radio" name="q2"> Galileo<br>
     </div>
-    <button onclick="checkAnswers()">Submit Answers</button>
   </section>
 
-  <!-- MCQs -->
-  <section id="mcqs" class="quiz">
+  <section id="mcq">
     <h2>MCQ Practice</h2>
-    <div class="question">
-      <p>1. What is the symbol of Sodium?</p>
-      <label><input type="radio" name="m1" value="wrong"> So</label>
-      <label><input type="radio" name="m1" value="correct"> Na</label>
-      <label><input type="radio" name="m1" value="wrong"> S</label>
-      <div class="result" id="result-m1"></div>
+    <div class="mcq">
+      <p>1. Which gas is essential for breathing?</p>
+      <input type="radio" name="mcq1"> Nitrogen<br>
+      <input type="radio" name="mcq1"> Oxygen<br>
+      <input type="radio" name="mcq1"> Carbon dioxide<br>
     </div>
-    <div class="question">
-      <p>2. Which gas do plants absorb?</p>
-      <label><input type="radio" name="m2" value="wrong"> Oxygen</label>
-      <label><input type="radio" name="m2" value="correct"> Carbon Dioxide</label>
-      <label><input type="radio" name="m2" value="wrong"> Hydrogen</label>
-      <div class="result" id="result-m2"></div>
+    <div class="mcq">
+      <p>2. What planet is known as the Red Planet?</p>
+      <input type="radio" name="mcq2"> Venus<br>
+      <input type="radio" name="mcq2"> Mars<br>
+      <input type="radio" name="mcq2"> Jupiter<br>
     </div>
-    <button onclick="checkMCQs()">Submit Answers</button>
   </section>
-
-  <footer>
-    Made with love by Veer Yaduveer for all students.
-  </footer>
 
   <script>
-    function showPage(pageId) {
-      document.querySelectorAll("section").forEach(section => {
-        section.classList.remove("active");
+    function showSection(id) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        section.classList.remove('active');
       });
-      document.getElementById(pageId).classList.add("active");
-    }
-
-    function checkAnswers() {
-      const q1 = document.querySelector('input[name="q1"]:checked');
-      const q2 = document.querySelector('input[name="q2"]:checked');
-      document.getElementById('result-q1').textContent = q1 ? (q1.value === "correct" ? "Correct!" : "Wrong!") : "Please select an answer.";
-      document.getElementById('result-q2').textContent = q2 ? (q2.value === "correct" ? "Correct!" : "Wrong!") : "Please select an answer.";
-    }
-
-    function checkMCQs() {
-      const m1 = document.querySelector('input[name="m1"]:checked');
-      const m2 = document.querySelector('input[name="m2"]:checked');
-      document.getElementById('result-m1').textContent = m1 ? (m1.value === "correct" ? "Correct!" : "Wrong!") : "Please select an answer.";
-      document.getElementById('result-m2').textContent = m2 ? (m2.value === "correct" ? "Correct!" : "Wrong!") : "Please select an answer.";
+      document.getElementById(id).classList.add('active');
     }
   </script>
+
 </body>
-  </html>
+</html>
