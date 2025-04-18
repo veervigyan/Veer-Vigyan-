@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Veer Vigyan</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -106,12 +105,12 @@
       cursor: pointer;
     }
 
-    .intro {
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+
+    .introduction {
       font-family: 'Cinzel Decorative', cursive;
       font-size: 1.1rem;
-      line-height: 1.8;
       text-align: center;
-      margin-top: 1.5rem;
     }
   </style>
 </head>
@@ -131,11 +130,8 @@
   <!-- HOME -->
   <section id="home" class="active">
     <h1>Welcome to Veer Vigyan</h1>
-    <p class="intro">
-      This website is created by <strong>Veer Yaduveer</strong>, a passionate student and science lover whose dream is to spread knowledge to every corner of India. <br>
-      Veer Vigyan is a mission to support and uplift students by providing quality learning content for free. <br>
-      You will find helpful books, PDFs, quizzes, test series, and MCQs here — all curated with love and purpose. <br>
-      Let's empower every student to rise and shine with the light of knowledge!
+    <p class="introduction">
+      Veer Vigyan is an educational platform created by <strong>Veer Yaduveer</strong>. With a deep passion for science and learning, Veer aims to help every student understand complex topics in a joyful and simple way. This site offers quality resources like books, PDFs, quizzes, and practice MCQs – all freely accessible. Join us on this journey to spread knowledge and build a smarter future together!
     </p>
   </section>
 
@@ -210,7 +206,8 @@
   </section>
 
   <footer>
-    Made with love by Veer Yaduveer for all students.
+    Made with love by Veer Yaduveer for all students. <br>
+    © 2025 Veer Vigyan. All rights reserved.
   </footer>
 
   <script>
@@ -235,6 +232,5 @@
       document.getElementById('result-m2').textContent = m2 ? (m2.value === "correct" ? "Correct!" : "Wrong!") : "Please select an answer.";
     }
   </script>
-
 </body>
 </html>
