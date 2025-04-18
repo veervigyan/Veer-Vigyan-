@@ -37,6 +37,7 @@
       border-radius: 10px;
       transition: background 0.3s;
       flex-shrink: 0;
+      cursor: pointer;
     }
 
     nav a:hover {
@@ -68,14 +69,14 @@
 <body>
 
   <nav>
-    <a href="#home" onclick="showSection('home')">Home</a>
-    <a href="#pdf" onclick="showSection('pdf')">PDF</a>
-    <a href="#books" onclick="showSection('books')">Books</a>
-    <a href="#classes" onclick="showSection('classes')">Classes</a>
-    <a href="#notes" onclick="showSection('notes')">Notes</a>
-    <a href="#testseries" onclick="showSection('testseries')">Test Series</a>
-    <a href="#quiz" onclick="showSection('quiz')">Quiz</a>
-    <a href="#mcq" onclick="showSection('mcq')">MCQ</a>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('pdf')">PDF</a>
+    <a onclick="showSection('books')">Books</a>
+    <a onclick="showSection('classes')">Classes</a>
+    <a onclick="showSection('notes')">Notes</a>
+    <a onclick="showSection('testseries')">Test Series</a>
+    <a onclick="showSection('quiz')">Quiz</a>
+    <a onclick="showSection('mcq')">MCQ</a>
   </nav>
 
   <section id="home" class="active">
