@@ -10,51 +10,48 @@
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, red, orange, yellow, green, blue, indigo, violet);
       background-size: 400% 400%;
-      animation: rainbowBackground 10s ease infinite;
+      animation: rainbowBG 10s ease infinite;
       color: white;
     }
 
-    @keyframes rainbowBackground {
+    @keyframes rainbowBG {
       0% {background-position: 0% 50%;}
       50% {background-position: 100% 50%;}
       100% {background-position: 0% 50%;}
     }
 
-    /* Header */
     header {
       background-color: black;
-      padding: 25px;
+      padding: 30px;
       text-align: center;
       font-size: 2.5em;
       font-weight: bold;
     }
 
-    /* Navigation Bar */
     nav {
       background-color: black;
       display: flex;
       overflow-x: auto;
       white-space: nowrap;
       padding: 15px;
+      gap: 25px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      padding: 14px 25px;
-      margin-right: 20px;
-      border-radius: 12px;
+      padding: 16px 28px;
       background-color: #333;
-      font-size: 1.2em;
-      transition: background-color 0.3s;
+      border-radius: 12px;
+      font-size: 1.3em;
       flex: 0 0 auto;
+      transition: background-color 0.3s;
     }
 
     nav a:hover {
       background-color: #555;
     }
 
-    /* Sections */
     section {
       display: none;
       background-color: black;
@@ -90,11 +87,13 @@
 
     @media screen and (max-width: 600px) {
       nav {
-        flex-direction: column;
+        flex-direction: row;
+        overflow-x: scroll;
       }
 
       nav a {
-        margin: 8px 0;
+        font-size: 1.1em;
+        padding: 14px 18px;
       }
     }
   </style>
@@ -117,34 +116,21 @@
 <section id="home" class="active">
   <h2>Welcome to Veer Vigyan</h2>
   <p>
-    Veer Vigyan is a passionate platform built by Veer Yaduveer for all science enthusiasts and curious learners.
-    This website is dedicated to providing helpful resources such as study PDFs, online classes, notes, quizzes,
-    MCQs, and much more. Explore, learn, and test your knowledge with all the facilities designed especially for students like you!
+    Veer Vigyan is a student-friendly platform developed by Veer Yaduveer to make science learning engaging, exciting, and effective. Here you'll find downloadable PDFs, interactive quizzes, MCQs, organized classes, and much more. Whether you're preparing for exams or exploring knowledge, Veer Vigyan is your best companion!
   </p>
 </section>
 
-<section id="pdf">
-  <h2>PDF Section</h2>
-  <p>Here you can access useful PDFs for study materials. (Coming soon)</p>
-</section>
-
-<section id="books">
-  <h2>Books Section</h2>
-  <p>Here you will find science and educational books. (Coming soon)</p>
-</section>
-
-<section id="classes">
-  <h2>Classes Section</h2>
-  <p>Join our online classes to enhance your knowledge. (Coming soon)</p>
-</section>
+<section id="pdf"><h2>PDF Section</h2><p>Downloadable study PDFs will be added here soon.</p></section>
+<section id="books"><h2>Books Section</h2><p>Science books and references will appear here. Stay tuned!</p></section>
+<section id="classes"><h2>Classes Section</h2><p>Live and recorded classes will be available here.</p></section>
 
 <section id="quiz">
   <h2>Quiz Section</h2>
   <div class="quiz">
-    <p>Q1: What is the boiling point of water at standard pressure?</p>
+    <p>Q1: What is the boiling point of water at sea level?</p>
     <label><input type="radio" name="q1" value="100°C" onclick="checkAnswer(this, 'q1', '100°C')"> 100°C</label><br>
-    <label><input type="radio" name="q1" value="0°C" onclick="checkAnswer(this, 'q1', '100°C')"> 0°C</label><br>
     <label><input type="radio" name="q1" value="50°C" onclick="checkAnswer(this, 'q1', '100°C')"> 50°C</label><br>
+    <label><input type="radio" name="q1" value="0°C" onclick="checkAnswer(this, 'q1', '100°C')"> 0°C</label><br>
     <div id="result-q1" class="result"></div>
   </div>
 </section>
@@ -152,23 +138,16 @@
 <section id="mcq">
   <h2>MCQ Section</h2>
   <div class="quiz">
-    <p>Q1: What planet is known as the Red Planet?</p>
+    <p>Q1: Which planet is called the Red Planet?</p>
     <label><input type="radio" name="m1" value="Mars" onclick="checkAnswer(this, 'm1', 'Mars')"> Mars</label><br>
+    <label><input type="radio" name="m1" value="Venus" onclick="checkAnswer(this, 'm1', 'Mars')"> Venus</label><br>
     <label><input type="radio" name="m1" value="Jupiter" onclick="checkAnswer(this, 'm1', 'Mars')"> Jupiter</label><br>
-    <label><input type="radio" name="m1" value="Saturn" onclick="checkAnswer(this, 'm1', 'Mars')"> Saturn</label><br>
     <div id="result-m1" class="result"></div>
   </div>
 </section>
 
-<section id="notes">
-  <h2>Notes Section</h2>
-  <p>Important notes for quick revision and concept clarity. (Coming soon)</p>
-</section>
-
-<section id="test">
-  <h2>Test Series</h2>
-  <p>Practice test series to evaluate your preparation. (Coming soon)</p>
-</section>
+<section id="notes"><h2>Notes</h2><p>Topic-wise notes will be uploaded here soon.</p></section>
+<section id="test"><h2>Test Series</h2><p>Take mock tests to check your preparation. Coming soon!</p></section>
 
 <script>
   function showSection(id) {
