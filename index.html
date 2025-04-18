@@ -64,6 +64,19 @@
     .quiz, .mcq {
       margin-top: 20px;
     }
+
+    .result {
+      margin-top: 5px;
+      font-weight: bold;
+    }
+
+    .correct {
+      color: #00ff00;
+    }
+
+    .wrong {
+      color: #ff5555;
+    }
   </style>
 </head>
 <body>
@@ -86,9 +99,6 @@
     </p>
     <p style="font-size: 1.1rem; line-height: 1.8;">
       The site is dedicated to delivering accessible and well-organized content including <strong>Books, PDFs, Notes, Test Series, Live Classes, Quizzes, and MCQs</strong>. Whether you're in school or preparing for exams, you’ll find the right content here, made with passion and purpose.
-    </p>
-    <p style="font-size: 1.1rem; line-height: 1.8;">
-      With beautiful design, powerful resources, and easy-to-use navigation, <strong>Veer Vigyan</strong> stands as your best online companion for learning and success. This platform grows with you — updated regularly, supported by your best friend, and made from the heart.
     </p>
     <p style="margin-top: 20px; font-weight: bold; font-size: 1.2rem;">
       Let’s grow together and achieve big dreams — Welcome to Veer Vigyan!
@@ -124,15 +134,17 @@
     <h2>Quiz Section</h2>
     <div class="quiz">
       <p>Q1: What is the boiling point of water?</p>
-      <input type="radio" name="q1"> 100°C<br>
-      <input type="radio" name="q1"> 0°C<br>
-      <input type="radio" name="q1"> 50°C<br>
+      <label><input type="radio" name="q1" onclick="checkAnswer(this, 'q1', '100')"> 100°C</label><br>
+      <label><input type="radio" name="q1" onclick="checkAnswer(this, 'q1', '0')"> 0°C</label><br>
+      <label><input type="radio" name="q1" onclick="checkAnswer(this, 'q1', '50')"> 50°C</label><br>
+      <div id="result-q1" class="result"></div>
     </div>
     <div class="quiz">
       <p>Q2: Who is known as the father of science?</p>
-      <input type="radio" name="q2"> Newton<br>
-      <input type="radio" name="q2"> Einstein<br>
-      <input type="radio" name="q2"> Galileo<br>
+      <label><input type="radio" name="q2" onclick="checkAnswer(this, 'q2', 'Galileo')"> Newton</label><br>
+      <label><input type="radio" name="q2" onclick="checkAnswer(this, 'q2', 'Galileo')"> Einstein</label><br>
+      <label><input type="radio" name="q2" onclick="checkAnswer(this, 'q2', 'Galileo')"> Galileo</label><br>
+      <div id="result-q2" class="result"></div>
     </div>
   </section>
 
@@ -140,15 +152,17 @@
     <h2>MCQ Practice</h2>
     <div class="mcq">
       <p>1. Which gas is essential for breathing?</p>
-      <input type="radio" name="mcq1"> Nitrogen<br>
-      <input type="radio" name="mcq1"> Oxygen<br>
-      <input type="radio" name="mcq1"> Carbon dioxide<br>
+      <label><input type="radio" name="mcq1" onclick="checkAnswer(this, 'mcq1', 'Oxygen')"> Nitrogen</label><br>
+      <label><input type="radio" name="mcq1" onclick="checkAnswer(this, 'mcq1', 'Oxygen')"> Oxygen</label><br>
+      <label><input type="radio" name="mcq1" onclick="checkAnswer(this, 'mcq1', 'Oxygen')"> Carbon dioxide</label><br>
+      <div id="result-mcq1" class="result"></div>
     </div>
     <div class="mcq">
       <p>2. What planet is known as the Red Planet?</p>
-      <input type="radio" name="mcq2"> Venus<br>
-      <input type="radio" name="mcq2"> Mars<br>
-      <input type="radio" name="mcq2"> Jupiter<br>
+      <label><input type="radio" name="mcq2" onclick="checkAnswer(this, 'mcq2', 'Mars')"> Venus</label><br>
+      <label><input type="radio" name="mcq2" onclick="checkAnswer(this, 'mcq2', 'Mars')"> Mars</label><br>
+      <label><input type="radio" name="mcq2" onclick="checkAnswer(this, 'mcq2', 'Mars')"> Jupiter</label><br>
+      <div id="result-mcq2" class="result"></div>
     </div>
   </section>
 
@@ -159,6 +173,18 @@
         section.classList.remove('active');
       });
       document.getElementById(id).classList.add('active');
+    }
+
+    function checkAnswer(input, group, correct) {
+      const answer = input.parentElement.textContent.trim();
+      const resultDiv = document.getElementById("result-" + group);
+      if (answer.includes(correct)) {
+        resultDiv.innerHTML = "Correct!";
+        resultDiv.className = "result correct";
+      } else {
+        resultDiv.innerHTML = "Wrong!";
+        resultDiv.className = "result wrong";
+      }
     }
   </script>
 
