@@ -1,192 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Veer Vigyan</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, red, orange, yellow, green, blue, indigo, violet);
-      background-size: 400% 400%;
-      animation: rainbow 10s ease infinite;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
       color: white;
     }
 
-    @keyframes rainbow {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+    header {
+      background-color: black;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
     }
 
     nav {
+      background-color: black;
       display: flex;
       overflow-x: auto;
       white-space: nowrap;
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 10px 0;
+      padding: 10px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       padding: 10px 20px;
-      margin: 0 10px;
-      background: rgba(255, 255, 255, 0.1);
+      margin-right: 15px;
       border-radius: 10px;
-      transition: background 0.3s;
-      flex-shrink: 0;
-      cursor: pointer;
+      background-color: #444;
+      transition: background-color 0.3s;
+      flex: 0 0 auto;
     }
 
     nav a:hover {
-      background: rgba(255, 255, 255, 0.3);
+      background-color: #666;
     }
 
     section {
-      display: none;
-      padding: 20px;
+      background-color: black;
+      padding: 30px;
       margin: 20px;
-      background-color: rgba(0, 0, 0, 0.9);
       border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
     }
 
-    section.active {
-      display: block;
+    h2 {
+      color: white;
     }
 
-    h1, h2 {
-      color: #ffcc00;
-    }
-
-    .quiz, .mcq {
-      margin-top: 20px;
+    .quiz {
+      margin-bottom: 20px;
     }
 
     .result {
-      margin-top: 5px;
+      margin-top: 10px;
       font-weight: bold;
     }
 
     .correct {
-      color: #00ff00;
+      color: lightgreen;
     }
 
     .wrong {
-      color: #ff5555;
+      color: red;
+    }
+
+    @media screen and (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 5px 0;
+      }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a onclick="showSection('home')">Home</a>
-    <a onclick="showSection('pdf')">PDF</a>
-    <a onclick="showSection('books')">Books</a>
-    <a onclick="showSection('classes')">Classes</a>
-    <a onclick="showSection('notes')">Notes</a>
-    <a onclick="showSection('testseries')">Test Series</a>
-    <a onclick="showSection('quiz')">Quiz</a>
-    <a onclick="showSection('mcq')">MCQ</a>
-  </nav>
+<header>Veer Vigyan</header>
 
-  <section id="home" class="active">
-    <h1>Welcome to Veer Vigyan</h1>
-    <p style="font-size: 1.2rem; line-height: 1.8;">
-      <strong>Veer Vigyan</strong> is a unique educational platform created by <strong>Veer Yaduveer</strong> with the vision to provide quality education and study material for students of all levels. It’s more than just a website – it’s a digital classroom, a knowledge bank, and a motivational space for every learner.
-    </p>
-    <p style="font-size: 1.1rem; line-height: 1.8;">
-      The site is dedicated to delivering accessible and well-organized content including <strong>Books, PDFs, Notes, Test Series, Live Classes, Quizzes, and MCQs</strong>. Whether you're in school or preparing for exams, you’ll find the right content here, made with passion and purpose.
-    </p>
-    <p style="margin-top: 20px; font-weight: bold; font-size: 1.2rem;">
-      Let’s grow together and achieve big dreams — Welcome to Veer Vigyan!
-    </p>
-  </section>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#pdf">PDF</a>
+  <a href="#books">Books</a>
+  <a href="#classes">Classes</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#mcq">MCQ</a>
+  <a href="#notes">Notes</a>
+  <a href="#test">Test Series</a>
+</nav>
 
-  <section id="pdf">
-    <h2>PDF Section</h2>
-    <p>Upload and access all your study PDFs here.</p>
-  </section>
+<section id="home">
+  <h2>Welcome to Veer Vigyan</h2>
+  <p>
+    Veer Vigyan is a powerful initiative by Veer Yaduveer, dedicated to helping students achieve their dreams. 
+    This platform provides everything from PDFs, books, online classes, quizzes, and MCQs to notes and test series — 
+    all in one place. We believe in making education accessible, simple, and effective for every learner.
+    Explore your knowledge and boost your confidence with our interactive tools and well-structured resources.
+  </p>
+</section>
 
-  <section id="books">
-    <h2>Books Section</h2>
-    <p>Find important books and references for your study here.</p>
-  </section>
+<section id="pdf">
+  <h2>PDF Section</h2>
+  <p>Here you can access useful PDFs for study materials. (Coming soon)</p>
+</section>
 
-  <section id="classes">
-    <h2>Classes</h2>
-    <p>Join online or offline classes and learn with experts.</p>
-  </section>
+<section id="books">
+  <h2>Books Section</h2>
+  <p>Here you will find science and educational books. (Coming soon)</p>
+</section>
 
-  <section id="notes">
-    <h2>Notes</h2>
-    <p>Download organized notes prepared by Veer Vigyan.</p>
-  </section>
+<section id="classes">
+  <h2>Classes Section</h2>
+  <p>Join our online classes to enhance your knowledge. (Coming soon)</p>
+</section>
 
-  <section id="testseries">
-    <h2>Test Series</h2>
-    <p>Practice full-length tests and improve your exam preparation.</p>
-  </section>
+<section id="quiz">
+  <h2>Quiz Section</h2>
+  <div class="quiz">
+    <p>Q1: What is the boiling point of water at standard pressure?</p>
+    <label><input type="radio" name="q1" value="100°C" onclick="checkAnswer(this, 'q1', '100°C')"> 100°C</label><br>
+    <label><input type="radio" name="q1" value="0°C" onclick="checkAnswer(this, 'q1', '100°C')"> 0°C</label><br>
+    <label><input type="radio" name="q1" value="50°C" onclick="checkAnswer(this, 'q1', '100°C')"> 50°C</label><br>
+    <div id="result-q1" class="result"></div>
+  </div>
+  <div class="quiz">
+    <p>Q2: Who is known as the father of modern science?</p>
+    <label><input type="radio" name="q2" value="Isaac Newton" onclick="checkAnswer(this, 'q2', 'Galileo Galilei')"> Isaac Newton</label><br>
+    <label><input type="radio" name="q2" value="Albert Einstein" onclick="checkAnswer(this, 'q2', 'Galileo Galilei')"> Albert Einstein</label><br>
+    <label><input type="radio" name="q2" value="Galileo Galilei" onclick="checkAnswer(this, 'q2', 'Galileo Galilei')"> Galileo Galilei</label><br>
+    <div id="result-q2" class="result"></div>
+  </div>
+</section>
 
-  <section id="quiz">
-    <h2>Quiz Section</h2>
-    <div class="quiz">
-      <p>Q1: What is the boiling point of water?</p>
-      <label><input type="radio" name="q1" onclick="checkAnswer(this, 'q1', '100')"> 100°C</label><br>
-      <label><input type="radio" name="q1" onclick="checkAnswer(this, 'q1', '0')"> 0°C</label><br>
-      <label><input type="radio" name="q1" onclick="checkAnswer(this, 'q1', '50')"> 50°C</label><br>
-      <div id="result-q1" class="result"></div>
-    </div>
-    <div class="quiz">
-      <p>Q2: Who is known as the father of science?</p>
-      <label><input type="radio" name="q2" onclick="checkAnswer(this, 'q2', 'Galileo')"> Newton</label><br>
-      <label><input type="radio" name="q2" onclick="checkAnswer(this, 'q2', 'Galileo')"> Einstein</label><br>
-      <label><input type="radio" name="q2" onclick="checkAnswer(this, 'q2', 'Galileo')"> Galileo</label><br>
-      <div id="result-q2" class="result"></div>
-    </div>
-  </section>
+<section id="mcq">
+  <h2>MCQ Section</h2>
+  <div class="quiz">
+    <p>Q1: What planet is known as the Red Planet?</p>
+    <label><input type="radio" name="m1" value="Mars" onclick="checkAnswer(this, 'm1', 'Mars')"> Mars</label><br>
+    <label><input type="radio" name="m1" value="Jupiter" onclick="checkAnswer(this, 'm1', 'Mars')"> Jupiter</label><br>
+    <label><input type="radio" name="m1" value="Saturn" onclick="checkAnswer(this, 'm1', 'Mars')"> Saturn</label><br>
+    <div id="result-m1" class="result"></div>
+  </div>
+</section>
 
-  <section id="mcq">
-    <h2>MCQ Practice</h2>
-    <div class="mcq">
-      <p>1. Which gas is essential for breathing?</p>
-      <label><input type="radio" name="mcq1" onclick="checkAnswer(this, 'mcq1', 'Oxygen')"> Nitrogen</label><br>
-      <label><input type="radio" name="mcq1" onclick="checkAnswer(this, 'mcq1', 'Oxygen')"> Oxygen</label><br>
-      <label><input type="radio" name="mcq1" onclick="checkAnswer(this, 'mcq1', 'Oxygen')"> Carbon dioxide</label><br>
-      <div id="result-mcq1" class="result"></div>
-    </div>
-    <div class="mcq">
-      <p>2. What planet is known as the Red Planet?</p>
-      <label><input type="radio" name="mcq2" onclick="checkAnswer(this, 'mcq2', 'Mars')"> Venus</label><br>
-      <label><input type="radio" name="mcq2" onclick="checkAnswer(this, 'mcq2', 'Mars')"> Mars</label><br>
-      <label><input type="radio" name="mcq2" onclick="checkAnswer(this, 'mcq2', 'Mars')"> Jupiter</label><br>
-      <div id="result-mcq2" class="result"></div>
-    </div>
-  </section>
+<section id="notes">
+  <h2>Notes Section</h2>
+  <p>Important notes for quick revision and concept clarity. (Coming soon)</p>
+</section>
 
-  <script>
-    function showSection(id) {
-      const sections = document.querySelectorAll('section');
-      sections.forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
+<section id="test">
+  <h2>Test Series</h2>
+  <p>Practice test series to evaluate your preparation. (Coming soon)</p>
+</section>
+
+<script>
+  function checkAnswer(input, group, correct) {
+    const selected = input.value;
+    const resultDiv = document.getElementById("result-" + group);
+    if (selected === correct) {
+      resultDiv.innerHTML = "Correct!";
+      resultDiv.className = "result correct";
+    } else {
+      resultDiv.innerHTML = "Wrong!";
+      resultDiv.className = "result wrong";
     }
-
-    function checkAnswer(input, group, correct) {
-      const answer = input.parentElement.textContent.trim();
-      const resultDiv = document.getElementById("result-" + group);
-      if (answer.includes(correct)) {
-        resultDiv.innerHTML = "Correct!";
-        resultDiv.className = "result correct";
-      } else {
-        resultDiv.innerHTML = "Wrong!";
-        resultDiv.className = "result wrong";
-      }
-    }
-  </script>
+  }
+</script>
 
 </body>
 </html>
