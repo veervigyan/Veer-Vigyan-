@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Veer Vigyan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -104,6 +105,14 @@
       border-radius: 8px;
       cursor: pointer;
     }
+
+    .intro {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
   </style>
 </head>
 <body>
@@ -122,7 +131,12 @@
   <!-- HOME -->
   <section id="home" class="active">
     <h1>Welcome to Veer Vigyan</h1>
-    <p>This website is created by <strong>Veer Yaduveer</strong>, a passionate learner who dreams of helping every student. Here you'll find useful books, PDFs, quizzes, and free learning material. Let’s make learning joyful together!</p>
+    <p class="intro">
+      This website is created by <strong>Veer Yaduveer</strong>, a passionate student and science lover whose dream is to spread knowledge to every corner of India. <br>
+      Veer Vigyan is a mission to support and uplift students by providing quality learning content for free. <br>
+      You will find helpful books, PDFs, quizzes, test series, and MCQs here — all curated with love and purpose. <br>
+      Let's empower every student to rise and shine with the light of knowledge!
+    </p>
   </section>
 
   <!-- PDF -->
@@ -221,5 +235,6 @@
       document.getElementById('result-m2').textContent = m2 ? (m2.value === "correct" ? "Correct!" : "Wrong!") : "Please select an answer.";
     }
   </script>
+
 </body>
 </html>
