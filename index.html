@@ -1,351 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Veer Vigyan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
-      background-size: 1400% 1400%;
-      animation: rainbow 20s ease infinite;
+      color: white;
+      background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
+      background-size: 2000% 2000%;
+      animation: rainbow 40s linear infinite;
     }
+
     @keyframes rainbow {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
+
     nav {
-      display: flex;
+      background: rgba(0, 0, 0, 0.85);
       overflow-x: auto;
-      background-color: black;
-      padding: 10px;
+      white-space: nowrap;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
+
+    nav::-webkit-scrollbar {
+      display: none;
+    }
+
     nav a {
+      display: inline-block;
       color: white;
       text-decoration: none;
-      margin: 0 20px;
-      font-size: 20px;
-      white-space: nowrap;
+      font-weight: bold;
+      margin: 0 15px;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: background 0.3s;
+      font-size: 1rem;
     }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
     section {
       display: none;
-      padding: 20px;
-      background-color: black;
-      color: white;
-      min-height: 90vh;
+      padding: 2rem;
+      background: black;
+      margin: 2rem auto;
+      max-width: 900px;
+      border-radius: 12px;
     }
+
     section.active {
       display: block;
     }
+
+    h1, h2 {
+      text-align: center;
+    }
+
     .intro {
       font-family: 'Cinzel Decorative', cursive;
+      font-size: 1.3rem;
       text-align: center;
-      font-size: 30px;
-      margin-top: 50px;
+      line-height: 1.6;
     }
-    .quiz, .mcq {
-      padding: 10px;
+
+    .quiz, .question {
+      margin-top: 20px;
     }
-    .question {
-      margin-bottom: 20px;
+
+    .question p {
+      font-weight: bold;
     }
+
+    label {
+      display: block;
+      margin-left: 20px;
+    }
+
     .result {
-      margin-top: 5px;
+      margin-top: 10px;
+      font-weight: bold;
+      color: yellow;
     }
+
     footer {
       text-align: center;
-      padding: 10px;
-      background-color: black;
-      color: white;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.7);
+      margin-top: 3rem;
+      font-size: 0.9rem;
     }
+
     button {
-      padding: 10px 20px;
-      font-size: 18px;
-      cursor: pointer;
-      background-color: white;
-      color: black;
+      margin-top: 10px;
+      padding: 5px 15px;
       border: none;
-      border-radius: 5px;
-    }
-    button:hover {
-      background-color: lightgray;
+      background: #fff;
+      color: black;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="#" onclick="showPage('home')">Home</a>
-  <a href="#" onclick="showPage('pdf')">PDF</a>
-  <a href="#" onclick="showPage('books')">Books</a>
-  <a href="#" onclick="showPage('classes')">Classes</a>
-  <a href="#" onclick="showPage('testseries')">Test Series</a>
-  <a href="#" onclick="showPage('notes')">Notes</a>
-  <a href="#" onclick="showPage('quiz')">Quiz</a>
-  <a href="#" onclick="showPage('mcqs')">MCQs</a>
-</nav>
+  <nav>
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('pdf')">PDF</a>
+    <a onclick="showPage('books')">Books</a>
+    <a onclick="showPage('classes')">Classes</a>
+    <a onclick="showPage('test')">Test Series</a>
+    <a onclick="showPage('notes')">Notes</a>
+    <a onclick="showPage('quiz')">Quiz</a>
+    <a onclick="showPage('mcqs')">MCQs</a>
+  </nav>
 
-<section id="home" class="active">
-  <div class="intro">
-    Welcome to Veer Vigyan!<br>
-    It's a mission to spread science knowledge.
-  </div>
-</section>
+  <!-- HOME -->
+  <section id="home" class="active">
+    <h1>Welcome to Veer Vigyan</h1>
+    <p class="intro">
+      This website is created by <strong>Veer Yaduveer</strong>, a passionate learner who believes that every student deserves access to free, joyful learning. <br><br>
+      Veer Vigyan is not just a website — it's a mission to spread science knowledge everywhere. Here you’ll get free PDFs, important books, test series, notes, and quizzes to sharpen your brain. <br><br>
+      Join the journey of making learning powerful, joyful, and for everyone!
+    </p>
+  </section>
 
-<section id="pdf">
-  <h2>PDF Section</h2>
-  <p>Coming soon...</p>
-</section>
+  <!-- PDF -->
+  <section id="pdf">
+    <h2>PDF Section</h2>
+    <p>Helpful study PDFs will be available here soon!</p>
+  </section>
 
-<section id="books">
-  <h2>Books Section</h2>
-  <p>Coming soon...</p>
-</section>
+  <!-- BOOKS -->
+  <section id="books">
+    <h2>Books Section</h2>
+    <p>Collection of important books for students. (Coming soon!)</p>
+  </section>
 
-<section id="classes">
-  <h2>Classes Section</h2>
-  <p>Coming soon...</p>
-</section>
+  <!-- CLASSES -->
+  <section id="classes">
+    <h2>Classes Section</h2>
+    <p>Watch lessons and video classes here. (Coming soon!)</p>
+  </section>
 
-<section id="testseries">
-  <h2>Test Series Section</h2>
-  <p>Coming soon...</p>
-</section>
+  <!-- TEST SERIES -->
+  <section id="test">
+    <h2>Test Series</h2>
+    <p>Practice tests and series coming soon!</p>
+  </section>
 
-<section id="notes">
-  <h2>Notes Section</h2>
-  <p>Coming soon...</p>
-</section>
+  <!-- NOTES -->
+  <section id="notes">
+    <h2>Notes Section</h2>
+    <p>Important notes and summaries will be available here!</p>
+  </section>
 
-<section id="quiz" class="quiz">
-  <h2>Quiz Section</h2>
+  <!-- QUIZ -->
+  <section id="quiz" class="quiz">
+    <h2>Quiz Section</h2>
 
-  <!-- Old Quizzes -->
-  <div class="question">
-    <p>1. What is the chemical symbol for water?</p>
-    <label><input type="radio" name="q1" value="correct"> H2O</label>
-    <label><input type="radio" name="q1" value="wrong"> CO2</label>
-    <label><input type="radio" name="q1" value="wrong"> O2</label>
-    <div class="result" id="result-q1"></div>
-  </div>
+    <div class="question">
+      <p>1. What is the boiling point of water?</p>
+      <label><input type="radio" name="q1" value="wrong"> 90°C</label>
+      <label><input type="radio" name="q1" value="correct"> 100°C</label>
+      <label><input type="radio" name="q1" value="wrong"> 120°C</label>
+      <div class="result" id="result-q1"></div>
+    </div>
 
-  <div class="question">
-    <p>2. Which planet is known as the Red Planet?</p>
-    <label><input type="radio" name="q2" value="correct"> Mars</label>
-    <label><input type="radio" name="q2" value="wrong"> Venus</label>
-    <label><input type="radio" name="q2" value="wrong"> Jupiter</label>
-    <div class="result" id="result-q2"></div>
-  </div>
+    <div class="question">
+      <p>2. Which planet is known as the Red Planet?</p>
+      <label><input type="radio" name="q2" value="wrong"> Earth</label>
+      <label><input type="radio" name="q2" value="correct"> Mars</label>
+      <label><input type="radio" name="q2" value="wrong"> Venus</label>
+      <div class="result" id="result-q2"></div>
+    </div>
 
-  <!-- New 10 Quiz Questions -->
-  <div class="question">
-    <p>3. What gas do plants absorb from the atmosphere?</p>
-    <label><input type="radio" name="q3" value="correct"> Carbon Dioxide</label>
-    <label><input type="radio" name="q3" value="wrong"> Oxygen</label>
-    <label><input type="radio" name="q3" value="wrong"> Nitrogen</label>
-    <div class="result" id="result-q3"></div>
-  </div>
+    <!-- Extra 8 Questions -->
+    <div class="question">
+      <p>3. Who is known as the father of computers?</p>
+      <label><input type="radio" name="q3" value="correct"> Charles Babbage</label>
+      <label><input type="radio" name="q3" value="wrong"> Albert Einstein</label>
+      <label><input type="radio" name="q3" value="wrong"> Isaac Newton</label>
+      <div class="result" id="result-q3"></div>
+    </div>
 
-  <div class="question">
-    <p>4. Who is known as the father of Physics?</p>
-    <label><input type="radio" name="q4" value="correct"> Isaac Newton</label>
-    <label><input type="radio" name="q4" value="wrong"> Albert Einstein</label>
-    <label><input type="radio" name="q4" value="wrong"> Galileo</label>
-    <div class="result" id="result-q4"></div>
-  </div>
+    <div class="question">
+      <p>4. What is H2O commonly known as?</p>
+      <label><input type="radio" name="q4" value="correct"> Water</label>
+      <label><input type="radio" name="q4" value="wrong"> Oxygen</label>
+      <label><input type="radio" name="q4" value="wrong"> Hydrogen</label>
+      <div class="result" id="result-q4"></div>
+    </div>
 
-  <div class="question">
-    <p>5. The process of conversion of water into vapor is called?</p>
-    <label><input type="radio" name="q5" value="correct"> Evaporation</label>
-    <label><input type="radio" name="q5" value="wrong"> Condensation</label>
-    <label><input type="radio" name="q5" value="wrong"> Sublimation</label>
-    <div class="result" id="result-q5"></div>
-  </div>
+    <div class="question">
+      <p>5. How many continents are there?</p>
+      <label><input type="radio" name="q5" value="wrong"> 5</label>
+      <label><input type="radio" name="q5" value="correct"> 7</label>
+      <label><input type="radio" name="q5" value="wrong"> 6</label>
+      <div class="result" id="result-q5"></div>
+    </div>
 
-  <div class="question">
-    <p>6. What is the center of an atom called?</p>
-    <label><input type="radio" name="q6" value="correct"> Nucleus</label>
-    <label><input type="radio" name="q6" value="wrong"> Electron</label>
-    <label><input type="radio" name="q6" value="wrong"> Proton</label>
-    <div class="result" id="result-q6"></div>
-  </div>
+    <div class="question">
+      <p>6. What gas do we breathe in?</p>
+      <label><input type="radio" name="q6" value="wrong"> Carbon Dioxide</label>
+      <label><input type="radio" name="q6" value="correct"> Oxygen</label>
+      <label><input type="radio" name="q6" value="wrong"> Nitrogen</label>
+      <div class="result" id="result-q6"></div>
+    </div>
 
-  <div class="question">
-    <p>7. What force pulls objects toward the Earth?</p>
-    <label><input type="radio" name="q7" value="correct"> Gravity</label>
-    <label><input type="radio" name="q7" value="wrong"> Magnetism</label>
-    <label><input type="radio" name="q7" value="wrong"> Friction</label>
-    <div class="result" id="result-q7"></div>
-  </div>
+    <div class="question">
+      <p>7. Which is the largest planet?</p>
+      <label><input type="radio" name="q7" value="wrong"> Earth</label>
+      <label><input type="radio" name="q7" value="correct"> Jupiter</label>
+      <label><input type="radio" name="q7" value="wrong"> Venus</label>
+      <div class="result" id="result-q7"></div>
+    </div>
 
-  <div class="question">
-    <p>8. Which part of the plant conducts photosynthesis?</p>
-    <label><input type="radio" name="q8" value="correct"> Leaf</label>
-    <label><input type="radio" name="q8" value="wrong"> Root</label>
-    <label><input type="radio" name="q8" value="wrong"> Stem</label>
-    <div class="result" id="result-q8"></div>
-  </div>
+    <div class="question">
+      <p>8. What is the freezing point of water?</p>
+      <label><input type="radio" name="q8" value="correct"> 0°C</label>
+      <label><input type="radio" name="q8" value="wrong"> 10°C</label>
+      <label><input type="radio" name="q8" value="wrong"> 5°C</label>
+      <div class="result" id="result-q8"></div>
+    </div>
 
-  <div class="question">
-    <p>9. Which planet is known for its rings?</p>
-    <label><input type="radio" name="q9" value="correct"> Saturn</label>
-    <label><input type="radio" name="q9" value="wrong"> Jupiter</label>
-    <label><input type="radio" name="q9" value="wrong"> Mars</label>
-    <div class="result" id="result-q9"></div>
-  </div>
+    <div class="question">
+      <p>9. Sun is a?</p>
+      <label><input type="radio" name="q9" value="correct"> Star</label>
+      <label><input type="radio" name="q9" value="wrong"> Planet</label>
+      <label><input type="radio" name="q9" value="wrong"> Moon</label>
+      <div class="result" id="result-q9"></div>
+    </div>
 
-  <div class="question">
-    <p>10. What is the largest organ in the human body?</p>
-    <label><input type="radio" name="q10" value="correct"> Skin</label>
-    <label><input type="radio" name="q10" value="wrong"> Heart</label>
-    <label><input type="radio" name="q10" value="wrong"> Brain</label>
-    <div class="result" id="result-q10"></div>
-  </div>
+    <div class="question">
+      <p>10. What is the main source of energy on Earth?</p>
+      <label><input type="radio" name="q10" value="correct"> Sun</label>
+      <label><input type="radio" name="q10" value="wrong"> Moon</label>
+      <label><input type="radio" name="q10" value="wrong"> Stars</label>
+      <div class="result" id="result-q10"></div>
+    </div>
 
-  <button onclick="checkAnswers()">Submit Quiz</button>
-</section>
+    <button onclick="checkAnswers()">Submit Answers</button>
+  </section>
+  <!-- MCQS -->
+  <section id="mcqs" class="quiz">
+    <h2>MCQs Section</h2>
 
-<section id="mcqs" class="quiz">
-  <h2>MCQ Section</h2>
+    <div class="question">
+      <p>1. What is the chemical symbol for Gold?</p>
+      <label><input type="radio" name="m1" value="correct"> Au</label>
+      <label><input type="radio" name="m1" value="wrong"> Ag</label>
+      <label><input type="radio" name="m1" value="wrong"> Go</label>
+      <div class="result" id="result-m1"></div>
+    </div>
 
-  <!-- Old MCQs -->
-  <div class="question">
-    <p>1. Sun is a?</p>
-    <label><input type="radio" name="m1" value="correct"> Star</label>
-    <label><input type="radio" name="m1" value="wrong"> Planet</label>
-    <label><input type="radio" name="m1" value="wrong"> Satellite</label>
-    <div class="result" id="result-m1"></div>
-  </div>
+    <div class="question">
+      <p>2. What is the largest ocean on Earth?</p>
+      <label><input type="radio" name="m2" value="correct"> Pacific Ocean</label>
+      <label><input type="radio" name="m2" value="wrong"> Atlantic Ocean</label>
+      <label><input type="radio" name="m2" value="wrong"> Indian Ocean</label>
+      <div class="result" id="result-m2"></div>
+    </div>
 
-  <div class="question">
-    <p>2. H2O is the chemical formula of?</p>
-    <label><input type="radio" name="m2" value="correct"> Water</label>
-    <label><input type="radio" name="m2" value="wrong"> Hydrogen</label>
-    <label><input type="radio" name="m2" value="wrong"> Oxygen</label>
-    <div class="result" id="result-m2"></div>
-  </div>
+    <div class="question">
+      <p>3. Who wrote 'Discovery of India'?</p>
+      <label><input type="radio" name="m3" value="correct"> Jawaharlal Nehru</label>
+      <label><input type="radio" name="m3" value="wrong"> Mahatma Gandhi</label>
+      <label><input type="radio" name="m3" value="wrong"> Rabindranath Tagore</label>
+      <div class="result" id="result-m3"></div>
+    </div>
 
-  <!-- New 10 MCQs -->
-  <div class="question">
-    <p>3. Earth is the ____ planet from the Sun.</p>
-    <label><input type="radio" name="m3" value="correct"> Third</label>
-    <label><input type="radio" name="m3" value="wrong"> Second</label>
-    <label><input type="radio" name="m3" value="wrong"> Fourth</label>
-    <div class="result" id="result-m3"></div>
-  </div>
+    <div class="question">
+      <p>4. Which organ purifies our blood?</p>
+      <label><input type="radio" name="m4" value="correct"> Kidney</label>
+      <label><input type="radio" name="m4" value="wrong"> Heart</label>
+      <label><input type="radio" name="m4" value="wrong"> Lungs</label>
+      <div class="result" id="result-m4"></div>
+    </div>
 
-  <div class="question">
-    <p>4. The boiling point of water is?</p>
-    <label><input type="radio" name="m4" value="correct"> 100°C</label>
-    <label><input type="radio" name="m4" value="wrong"> 90°C</label>
-    <label><input type="radio" name="m4" value="wrong"> 110°C</label>
-    <div class="result" id="result-m4"></div>
-  </div>
+    <div class="question">
+      <p>5. What is the national flower of India?</p>
+      <label><input type="radio" name="m5" value="correct"> Lotus</label>
+      <label><input type="radio" name="m5" value="wrong"> Rose</label>
+      <label><input type="radio" name="m5" value="wrong"> Sunflower</label>
+      <div class="result" id="result-m5"></div>
+    </div>
 
-  <div class="question">
-    <p>5. Which gas do humans breathe in to survive?</p>
-    <label><input type="radio" name="m5" value="correct"> Oxygen</label>
-    <label><input type="radio" name="m5" value="wrong"> Carbon Dioxide</label>
-    <label><input type="radio" name="m5" value="wrong"> Nitrogen</label>
-    <div class="result" id="result-m5"></div>
-  </div>
+    <div class="question">
+      <p>6. Who invented the telephone?</p>
+      <label><input type="radio" name="m6" value="correct"> Alexander Graham Bell</label>
+      <label><input type="radio" name="m6" value="wrong"> Thomas Edison</label>
+      <label><input type="radio" name="m6" value="wrong"> Nikola Tesla</label>
+      <div class="result" id="result-m6"></div>
+    </div>
 
-  <div class="question">
-    <p>6. Which is the largest planet in our solar system?</p>
-    <label><input type="radio" name="m6" value="correct"> Jupiter</label>
-    <label><input type="radio" name="m6" value="wrong"> Saturn</label>
-    <label><input type="radio" name="m6" value="wrong"> Earth</label>
-    <div class="result" id="result-m6"></div>
-  </div>
+    <div class="question">
+      <p>7. What is the capital of Japan?</p>
+      <label><input type="radio" name="m7" value="correct"> Tokyo</label>
+      <label><input type="radio" name="m7" value="wrong"> Kyoto</label>
+      <label><input type="radio" name="m7" value="wrong"> Osaka</label>
+      <div class="result" id="result-m7"></div>
+    </div>
 
-  <div class="question">
-    <p>7. Who invented the light bulb?</p>
-    <label><input type="radio" name="m7" value="correct"> Thomas Edison</label>
-    <label><input type="radio" name="m7" value="wrong"> Isaac Newton</label>
-    <label><input type="radio" name="m7" value="wrong"> Galileo</label>
-    <div class="result" id="result-m7"></div>
-  </div>
+    <div class="question">
+      <p>8. Which gas is most abundant in the Earth's atmosphere?</p>
+      <label><input type="radio" name="m8" value="correct"> Nitrogen</label>
+      <label><input type="radio" name="m8" value="wrong"> Oxygen</label>
+      <label><input type="radio" name="m8" value="wrong"> Carbon Dioxide</label>
+      <div class="result" id="result-m8"></div>
+    </div>
 
-  <div class="question">
-    <p>8. Which blood group is known as the universal donor?</p>
-    <label><input type="radio" name="m8" value="correct"> O Negative</label>
-    <label><input type="radio" name="m8" value="wrong"> A Positive</label>
-    <label><input type="radio" name="m8" value="wrong"> B Positive</label>
-    <div class="result" id="result-m8"></div>
-  </div>
+    <div class="question">
+      <p>9. How many players are there in a cricket team?</p>
+      <label><input type="radio" name="m9" value="correct"> 11</label>
+      <label><input type="radio" name="m9" value="wrong"> 12</label>
+      <label><input type="radio" name="m9" value="wrong"> 10</label>
+      <div class="result" id="result-m9"></div>
+    </div>
 
-  <div class="question">
-    <p>9. What is the main source of energy for Earth?</p>
-    <label><input type="radio" name="m9" value="correct"> Sun</label>
-    <label><input type="radio" name="m9" value="wrong"> Moon</label>
-    <label><input type="radio" name="m9" value="wrong"> Stars</label>
-    <div class="result" id="result-m9"></div>
-  </div>
+    <div class="question">
+      <p>10. Which is the longest river in the world?</p>
+      <label><input type="radio" name="m10" value="correct"> Nile</label>
+      <label><input type="radio" name="m10" value="wrong"> Amazon</label>
+      <label><input type="radio" name="m10" value="wrong"> Ganga</label>
+      <div class="result" id="result-m10"></div>
+    </div>
 
-  <div class="question">
-    <p>10. What do bees collect from flowers?</p>
-    <label><input type="radio" name="m10" value="correct"> Nectar</label>
-    <label><input type="radio" name="m10" value="wrong"> Pollen</label>
-    <label><input type="radio" name="m10" value="wrong"> Honey</label>
-    <div class="result" id="result-m10"></div>
-  </div>
+    <button onclick="checkMCQs()">Submit MCQs</button>
+  </section>
 
-  <button onclick="checkMCQ()">Submit MCQs</button>
-</section>
+  <footer>
+    &copy; 2025 Veer Vigyan. All rights reserved.
+  </footer>
 
-<footer>
-  Created with love by Veer Vigyan
-</footer>
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
+    }
 
-<script>
-  function showPage(pageId) {
-    document.querySelectorAll('section').forEach(section => {
-      section.classList.remove('active');
-    });
-    document.getElementById(pageId).classList.add('active');
-  }
-
-  function checkAnswers() {
-    for (let i = 1; i <= 10; i++) {
-      const selected = document.querySelector(`input[name="q${i}"]:checked`);
-      const result = document.getElementById(`result-q${i}`);
-      if (selected) {
-        if (selected.value === "correct") {
-          result.innerHTML = "Correct!";
-          result.style.color = "lightgreen";
-        } else {
-          result.innerHTML = "Incorrect!";
-          result.style.color = "red";
-        }
-      } else {
-        result.innerHTML = "Please select an option.";
-        result.style.color = "yellow";
+    function checkAnswers() {
+      for (let i = 1; i <= 10; i++) {
+        const options = document.getElementsByName(`q${i}`);
+        options.forEach(option => {
+          if (option.checked) {
+            const result = document.getElementById(`result-q${i}`);
+            if (option.value === "correct") {
+              result.textContent = "Correct!";
+            } else {
+              result.textContent = "Incorrect.";
+            }
+          }
+        });
       }
     }
-  }
 
-  function checkMCQ() {
-    for (let i = 1; i <= 10; i++) {
-      const selected = document.querySelector(`input[name="m${i}"]:checked`);
-      const result = document.getElementById(`result-m${i}`);
-      if (selected) {
-        if (selected.value === "correct") {
-          result.innerHTML = "Correct!";
-          result.style.color = "lightgreen";
-        } else {
-          result.innerHTML = "Incorrect!";
-          result.style.color = "red";
-        }
-      } else {
-        result.innerHTML = "Please select an option.";
-        result.style.color = "yellow";
+    function checkMCQs() {
+      for (let i = 1; i <= 10; i++) {
+        const options = document.getElementsByName(`m${i}`);
+        options.forEach(option => {
+          if (option.checked) {
+            const result = document.getElementById(`result-m${i}`);
+            if (option.value === "correct") {
+              result.textContent = "Correct!";
+            } else {
+              result.textContent = "Incorrect.";
+            }
+          }
+        });
       }
     }
-  }
-</script>
+  </script>
 
 </body>
-  </html>
+        </html>
