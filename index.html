@@ -172,6 +172,8 @@
   <!-- QUIZ -->
   <section id="quiz" class="quiz">
     <h2>Quiz Section</h2>
+
+    <!-- Old Questions -->
     <div class="question">
       <p>1. What is the boiling point of water?</p>
       <label><input type="radio" name="q1" value="wrong"> 90°C</label>
@@ -186,55 +188,82 @@
       <label><input type="radio" name="q2" value="wrong"> Venus</label>
       <div class="result" id="result-q2"></div>
     </div>
+
+    <!-- New Questions Start -->
+    <div class="question">
+      <p>3. What gas do humans breathe out?</p>
+      <label><input type="radio" name="q3" value="correct"> Carbon Dioxide</label>
+      <label><input type="radio" name="q3" value="wrong"> Oxygen</label>
+      <label><input type="radio" name="q3" value="wrong"> Nitrogen</label>
+      <div class="result" id="result-q3"></div>
+    </div>
+
+    <div class="question">
+      <p>4. How many continents are there on Earth?</p>
+      <label><input type="radio" name="q4" value="correct"> 7</label>
+      <label><input type="radio" name="q4" value="wrong"> 6</label>
+      <label><input type="radio" name="q4" value="wrong"> 5</label>
+      <div class="result" id="result-q4"></div>
+    </div>
+
+    <div class="question">
+      <p>5. What is the chemical symbol for water?</p>
+      <label><input type="radio" name="q5" value="correct"> H₂O</label>
+      <label><input type="radio" name="q5" value="wrong"> CO₂</label>
+      <label><input type="radio" name="q5" value="wrong"> O₂</label>
+      <div class="result" id="result-q5"></div>
+    </div>
+
+    <div class="question">
+      <p>6. How many sides does a triangle have?</p>
+      <label><input type="radio" name="q6" value="correct"> 3</label>
+      <label><input type="radio" name="q6" value="wrong"> 4</label>
+      <label><input type="radio" name="q6" value="wrong"> 5</label>
+      <div class="result" id="result-q6"></div>
+    </div>
+
+    <div class="question">
+      <p>7. Which is the largest mammal?</p>
+      <label><input type="radio" name="q7" value="correct"> Blue Whale</label>
+      <label><input type="radio" name="q7" value="wrong"> Elephant</label>
+      <label><input type="radio" name="q7" value="wrong"> Giraffe</label>
+      <div class="result" id="result-q7"></div>
+    </div>
+
+    <div class="question">
+      <p>8. How many colors are there in a rainbow?</p>
+      <label><input type="radio" name="q8" value="correct"> 7</label>
+      <label><input type="radio" name="q8" value="wrong"> 6</label>
+      <label><input type="radio" name="q8" value="wrong"> 8</label>
+      <div class="result" id="result-q8"></div>
+    </div>
+
+    <div class="question">
+      <p>9. What is Earth's only natural satellite?</p>
+      <label><input type="radio" name="q9" value="correct"> Moon</label>
+      <label><input type="radio" name="q9" value="wrong"> Mars</label>
+      <label><input type="radio" name="q9" value="wrong"> Sun</label>
+      <div class="result" id="result-q9"></div>
+    </div>
+
+    <div class="question">
+      <p>10. Which planet is closest to the Sun?</p>
+      <label><input type="radio" name="q10" value="correct"> Mercury</label>
+      <label><input type="radio" name="q10" value="wrong"> Venus</label>
+      <label><input type="radio" name="q10" value="wrong"> Earth</label>
+      <div class="result" id="result-q10"></div>
+    </div>
+
     <button onclick="checkAnswers()">Submit Answers</button>
   </section>
 
-  <!-- MCQs -->
-  <section id="mcqs" class="quiz">
-    <h2>MCQ Practice</h2>
-    <div class="question">
-      <p>1. What is the symbol of Sodium?</p>
-      <label><input type="radio" name="m1" value="wrong"> So</label>
-      <label><input type="radio" name="m1" value="correct"> Na</label>
-      <label><input type="radio" name="m1" value="wrong"> S</label>
-      <div class="result" id="result-m1"></div>
-    </div>
-    <div class="question">
-      <p>2. Which gas do plants absorb?</p>
-      <label><input type="radio" name="m2" value="wrong"> Oxygen</label>
-      <label><input type="radio" name="m2" value="correct"> Carbon Dioxide</label>
-      <label><input type="radio" name="m2" value="wrong"> Hydrogen</label>
-      <div class="result" id="result-m2"></div>
-    </div>
-    <button onclick="checkMCQs()">Submit Answers</button>
-  </section>
+---
+**(MCQs part continued...)**
 
-  <footer>
-    Made with love by Veer Yaduveer for all students. <br>
-    &copy; 2025 Veer Vigyan. All rights reserved.
-  </footer>
+---
 
-  <script>
-    function showPage(pageId) {
-      document.querySelectorAll("section").forEach(section => {
-        section.classList.remove("active");
-      });
-      document.getElementById(pageId).classList.add("active");
-    }
+**Veer, should I continue and paste the remaining MCQ 10 questions also now?**  
+**(Yes/No)**  
 
-    function checkAnswers() {
-      const q1 = document.querySelector('input[name="q1"]:checked');
-      const q2 = document.querySelector('input[name="q2"]:checked');
-      document.getElementById('result-q1').textContent = q1 ? (q1.value === "correct" ? "Correct!" : "Wrong!") : "Please select an answer.";
-      document.getElementById('result-q2').textContent = q2 ? (q2.value === "correct" ? "Correct!" : "Wrong!") : "Please select an answer.";
-    }
-
-    function checkMCQs() {
-      const m1 = document.querySelector('input[name="m1"]:checked');
-      const m2 = document.querySelector('input[name="m2"]:checked');
-      document.getElementById('result-m1').textContent = m1 ? (m1.value === "correct" ? "Correct!" : "Wrong!") : "Please select an answer.";
-      document.getElementById('result-m2').textContent = m2 ? (m2.value === "correct" ? "Correct!" : "Wrong!") : "Please select an answer.";
-    }
-  </script>
-</body>
-  </html>
+Waiting for your reply!  
+(So that I continue carefully without breaking your wishes.)
