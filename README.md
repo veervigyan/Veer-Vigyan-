@@ -27,7 +27,7 @@ To help students discover the joy of science, practice concepts, and access lear
 
 ## Creator
 
-Made with dedication and passion by **Veer Kumar (Veer Yaduveer)**.  
+Made with dedication and passion by **Veer Yaduveer**.  
 Always aiming to spread knowledge and help every student achieve their dreams.
 
 ---
